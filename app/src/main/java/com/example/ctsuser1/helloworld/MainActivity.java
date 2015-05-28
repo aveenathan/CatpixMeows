@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.io.IOException;
 
 
@@ -18,14 +21,20 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //create media player to play the sound
         final MediaPlayer mp = new MediaPlayer();
         ImageButton b = (ImageButton) findViewById(R.id.button1);
 
-        //disable ScrollView in portrait mode
+        //create an Adview to display test ads
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        //disable ScrollView in portrait mode - has been removed (commented after having orientation specific layouts
         //if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
         //  ScrollView scrollView = (ScrollView)findViewById(R.id.ScrollView01);
         //scrollView.setEnabled(false);}
-
+        //use media player to play the sound
         b.setOnClickListener(new View.OnClickListener() {
 
             @Override

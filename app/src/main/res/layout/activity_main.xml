@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ScrollView01"
     android:layout_width="match_parent"
@@ -13,7 +14,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:scrollbars="none"
     tools:context=".MainActivity">
-    >
+
 
     <ImageButton
 
@@ -33,6 +34,7 @@
     <TextView
 
         android:id="@+id/helloText"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/button1"
@@ -47,5 +49,17 @@
         android:textSize="16sp"
         android:typeface="sans" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/button1"
+        android:layout_alignParentEnd="false"
+        android:layout_alignRight="@id/button1"
+        android:layout_alignStart="@id/button1"
+        android:layout_below="@id/helloText"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
 </RelativeLayout>
 

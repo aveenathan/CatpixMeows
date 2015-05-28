@@ -1,13 +1,14 @@
 package com.example.ctsuser1.helloworld;
-
 import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 
 import java.io.IOException;
 
@@ -20,6 +21,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         final MediaPlayer mp = new MediaPlayer();
         ImageButton b = (ImageButton) findViewById(R.id.button1);
+
+        // disable ScrollView in portrait mode
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            ScrollView scrollView = (ScrollView)findViewById(R.id.ScrollView01);
+            scrollView.setEnabled(false);};
 
         b.setOnClickListener(new View.OnClickListener() {
 

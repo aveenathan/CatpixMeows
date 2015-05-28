@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
         // disable ScrollView in portrait mode
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             ScrollView scrollView = (ScrollView)findViewById(R.id.ScrollView01);
-            scrollView.setEnabled(false);};
+            scrollView.setEnabled(false);}
 
         b.setOnClickListener(new View.OnClickListener() {
 
